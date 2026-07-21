@@ -1,0 +1,21 @@
+```mermaid
+erDiagram
+
+STUDENT ||--o{ ENROLLMENT : Enrolls
+COURSE ||--o{ ENROLLMENT : Contains
+
+STUDENT {
+int StudentID PK
+string Name
+}
+
+COURSE {
+int CourseID PK
+string CourseName
+}
+
+ENROLLMENT {
+int StudentID FK
+int CourseID FK
+}
+```
