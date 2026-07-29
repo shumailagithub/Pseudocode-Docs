@@ -1,0 +1,1517 @@
+# Chapter 9: Algorithm Design and Problem-solving (Part 1)
+
+> **Cambridge International AS & A Level Computer Science (9618)**
+>
+> **Chapter 9.1 – Computational Thinking Skills**
+>
+> These notes are written for teachers and students with easy explanations, real-life examples, and Cambridge exam preparation.
+
+---
+
+# Learning Objectives
+
+After studying this section, you should be able to:
+
+- Explain what **Computational Thinking** is.
+- Understand **Abstraction**.
+- Explain why abstraction is important.
+- Create an abstract model of a system.
+- Understand **Decomposition**.
+- Break a large problem into smaller modules (procedures/functions).
+
+---
+
+# 9.1 Computational Thinking Skills
+
+## What is Computational Thinking?
+
+Before writing a computer program, we need to think about **how to solve the problem**.
+
+The process of solving a problem logically so that a computer can understand it is called **Computational Thinking**.
+
+> **Definition**
+>
+> Computational Thinking is a method of solving problems by breaking them down into logical steps that can later be programmed into a computer.
+
+Computational Thinking mainly consists of two important concepts:
+
+1. **Abstraction**
+2. **Decomposition**
+
+---
+
+# 1. Abstraction
+
+## What is Abstraction?
+
+> **Definition**
+>
+> Abstraction means **keeping only the important information and ignoring unnecessary details**.
+
+In programming, computers do not need every detail about a problem.
+
+Instead, we only provide the information that is necessary for solving the problem.
+
+---
+
+## Simple Explanation
+
+Imagine your teacher asks:
+
+> "Tell me about your school."
+
+You could describe:
+
+- Every classroom
+- Every student
+- Every teacher
+- Every chair
+- Every fan
+
+But that would take hours.
+
+Instead, you simply say:
+
+- School Name
+- Location
+- Number of Students
+- Principal
+
+You ignored unnecessary information.
+
+That is **Abstraction**.
+
+---
+
+# Real-Life Example 1 – Google Maps
+
+When you use Google Maps, it does **not** show everything.
+
+It ignores information such as:
+
+- Tree locations
+- Building colours
+- Road signs
+- Street lights
+- Parked cars
+
+Instead, it only shows information needed for navigation:
+
+- Roads
+- Traffic
+- Destination
+- Distance
+- Estimated arrival time
+
+This is an example of **Abstraction**.
+
+---
+
+# Real-Life Example 2 – Student Record
+
+A student has many pieces of information.
+
+| Information | Needed for Exam Result? |
+|-------------|------------------------|
+| Name | ✅ Yes |
+| Roll Number | ✅ Yes |
+| Marks | ✅ Yes |
+| Favourite Colour | ❌ No |
+| Hair Colour | ❌ No |
+| Shoe Size | ❌ No |
+| Mobile Brand | ❌ No |
+
+For an examination result, only these are important:
+
+- Name
+- Roll Number
+- Marks
+
+Everything else is ignored.
+
+This is **Abstraction**.
+
+---
+
+# Why Do We Need Abstraction?
+
+Large problems often contain too much information.
+
+If we include every detail:
+
+- Programs become complicated.
+- Development becomes slower.
+- Finding errors becomes difficult.
+
+Abstraction solves this problem.
+
+---
+
+## Benefits of Abstraction
+
+- Makes problems easier to understand.
+- Reduces complexity.
+- Saves programming time.
+- Focuses only on important information.
+- Makes software easier to design.
+- Makes programs easier to maintain.
+
+---
+
+# Purpose of Abstraction
+
+The purpose of abstraction is:
+
+> **To simplify a problem by hiding unnecessary details while keeping only the essential information.**
+
+---
+
+# Abstract Model
+
+The Cambridge syllabus states:
+
+> **Produce an abstract model of a system by only including essential details.**
+
+An abstract model is a simplified version of a real system.
+
+---
+
+# Example – ATM Machine
+
+A real ATM contains many components:
+
+- Camera
+- Printer
+- Cash Box
+- Screen
+- Speakers
+- Lights
+- Buttons
+- Network Connection
+
+However, when designing an ATM program, we only focus on important operations.
+
+### Input
+
+- ATM Card
+- PIN
+- Withdrawal Amount
+
+### Processing
+
+- Check PIN
+- Verify Balance
+- Deduct Amount
+
+### Output
+
+- Dispense Cash
+- Print Receipt
+- Display Remaining Balance
+
+Everything else is ignored.
+
+This simplified version is called an **Abstract Model**.
+
+---
+
+# Another Example – Library System
+
+A library contains many things.
+
+- Walls
+- Chairs
+- Fans
+- Windows
+- Lights
+- Books
+- Librarian
+
+If we are writing software for the library, we only care about:
+
+### Input
+
+- Student ID
+- Book ID
+
+### Processing
+
+- Check availability
+- Record borrowing
+
+### Output
+
+- Book issued
+- Due date
+
+Again, unnecessary physical details are ignored.
+
+---
+
+# Exam Question Example
+
+### Question
+
+State whether the following are included in an abstract model of an online shopping website.
+
+| Detail | Include? |
+|---------|----------|
+| Product Name | ✅ Yes |
+| Product Price | ✅ Yes |
+| Customer Address | ✅ Yes |
+| Website Background Colour | ❌ No |
+| Animation Speed | ❌ No |
+
+---
+
+# Remember
+
+> Abstraction means **Ignore what is unnecessary. Keep what is important.**
+
+---
+
+# 2. Decomposition
+
+## What is Decomposition?
+
+> **Definition**
+>
+> Decomposition means **breaking a large problem into smaller, easier-to-manage parts.**
+
+Instead of solving one huge problem, we divide it into several smaller problems.
+
+Each smaller problem can be solved separately.
+
+---
+
+# Simple Explanation
+
+Imagine your teacher asks you to build an entire school management system.
+
+It would be extremely difficult to complete everything at once.
+
+Instead, you divide it into smaller parts.
+
+- Student Registration
+- Attendance
+- Examination
+- Fee Management
+- Report Cards
+
+Each part is easier to develop.
+
+This process is called **Decomposition**.
+
+---
+
+# Real-Life Example – Preparing a Birthday Party
+
+Instead of doing everything together, you divide the work.
+
+Task 1
+
+- Buy decorations
+
+Task 2
+
+- Order the cake
+
+Task 3
+
+- Invite guests
+
+Task 4
+
+- Arrange music
+
+Task 5
+
+- Prepare food
+
+Small tasks together complete the entire project.
+
+---
+
+# Programming Example
+
+Suppose we are creating an Online Shopping System.
+
+Instead of writing one very large program, we divide it into modules.
+
+```text
+Login()
+
+SearchProduct()
+
+AddToCart()
+
+Payment()
+
+GenerateInvoice()
+
+Logout()
+```
+
+Each module performs one specific task.
+
+When combined, they create the complete application.
+
+---
+
+# Another Programming Example
+
+Suppose you are making a Student Management System.
+
+Instead of writing everything together:
+
+```text
+Manage School
+```
+
+Break it into:
+
+```text
+RegisterStudent()
+
+UpdateStudent()
+
+CalculateMarks()
+
+PrintReport()
+
+DeleteStudent()
+```
+
+Each function has one responsibility.
+
+---
+
+# Why Use Decomposition?
+
+Breaking a problem into smaller parts provides many advantages.
+
+## Benefits
+
+- Easier to understand
+- Easier to code
+- Easier to debug
+- Easier to test
+- Easier to maintain
+- Multiple programmers can work at the same time
+- Individual modules can be reused in other programs
+
+---
+
+# Modules
+
+In programming, each smaller task is usually written as a:
+
+- Procedure
+- Function
+
+These are also called **Modules**.
+
+Example:
+
+```text
+FUNCTION CalculateAverage()
+
+FUNCTION PrintReport()
+
+FUNCTION Login()
+
+FUNCTION SearchBook()
+```
+
+Each module performs one specific job.
+
+---
+
+# Real-Life Analogy
+
+Think of building a house.
+
+Instead of one person doing everything:
+
+- One team builds the walls.
+- One team installs electricity.
+- One team paints.
+- One team installs doors.
+
+Every team completes one module.
+
+Finally, all modules are combined to build the complete house.
+
+This is exactly how software development works.
+
+---
+
+# Abstraction vs Decomposition
+
+Students often confuse these two concepts.
+
+| Abstraction | Decomposition |
+|-------------|--------------|
+| Removes unnecessary details | Breaks a problem into smaller parts |
+| Focuses on important information | Focuses on dividing work |
+| Simplifies information | Simplifies development |
+| Hides complexity | Divides complexity |
+
+---
+
+# Easy Trick to Remember
+
+## Abstraction
+
+Think:
+
+> **Ignore unnecessary details.**
+
+---
+
+## Decomposition
+
+Think:
+
+> **Divide a big problem into smaller problems.**
+
+---
+
+# Classroom Activity
+
+## Activity 1
+
+Ask students:
+
+**What information is necessary for a car-driving program?**
+
+Possible answers:
+
+- Speed
+- Fuel Level
+- Engine Status
+- Brake Status
+
+Ignore:
+
+- Car colour
+- Seat cover design
+- Sticker colour
+- Wheel brand
+
+This demonstrates **Abstraction**.
+
+---
+
+## Activity 2
+
+Ask students to divide a Hospital Management System into modules.
+
+Possible answer:
+
+```text
+Patient Registration
+
+Doctor Management
+
+Appointment Booking
+
+Billing
+
+Medical Reports
+
+Medicine Inventory
+```
+
+This demonstrates **Decomposition**.
+
+---
+
+# Cambridge Examination Tips
+
+Remember these points:
+
+- **Abstraction** removes unnecessary details.
+- **Decomposition** divides a large problem into smaller parts.
+- Every module usually becomes a **Procedure** or **Function**.
+- Both concepts make programming easier and are widely used in software development.
+
+---
+
+# Summary
+
+## Computational Thinking
+
+- A logical way of solving problems.
+
+## Abstraction
+
+- Keep important information.
+- Ignore unnecessary details.
+
+## Decomposition
+
+- Divide one large problem into smaller modules.
+
+## Modules
+
+Usually implemented as:
+
+- Procedures
+- Functions
+
+These concepts are the foundation of algorithm design and software development.
+
+
+
+
+
+
+
+
+# Chapter 9: Algorithm Design and Problem-solving (Part 2)
+
+> **Cambridge International AS & A Level Computer Science (9618)**
+>
+> **Chapter 9.2 – Algorithms**
+>
+> These notes include detailed explanations, examples, pseudocode, flowcharts, and Cambridge examination tips.
+
+---
+
+# 9.2 Algorithms
+
+## What is an Algorithm?
+
+Before writing a computer program, we first plan **how the problem will be solved**.
+
+The step-by-step plan that solves a problem is called an **Algorithm**.
+
+> **Definition**
+>
+> An **Algorithm** is a sequence of clearly defined instructions that solves a problem or performs a specific task.
+
+Simply put,
+
+> **Algorithm = Recipe for solving a problem**
+
+---
+
+# Real-Life Example 1 – Making Tea
+
+We don't make tea randomly.
+
+We follow steps.
+
+```text
+Step 1: Boil water.
+
+Step 2: Add tea leaves.
+
+Step 3: Add sugar.
+
+Step 4: Add milk.
+
+Step 5: Pour into a cup.
+
+Step 6: Serve.
+```
+
+These steps form an **algorithm**.
+
+---
+
+# Real-Life Example 2 – Logging into a Website
+
+```text
+Step 1: Enter username.
+
+Step 2: Enter password.
+
+Step 3: Click Login.
+
+Step 4: Verify username and password.
+
+Step 5: If correct, open dashboard.
+
+Step 6: Otherwise display an error message.
+```
+
+Again, this is an algorithm.
+
+---
+
+# Characteristics of a Good Algorithm
+
+A good algorithm should have the following characteristics.
+
+## 1. Clear
+
+Every step should be easy to understand.
+
+---
+
+## 2. Sequential
+
+Instructions should appear in the correct order.
+
+---
+
+## 3. Finite
+
+The algorithm must eventually stop.
+
+It should not run forever.
+
+---
+
+## 4. Correct
+
+It should produce the correct output.
+
+---
+
+## 5. Efficient
+
+It should solve the problem using as little time and memory as possible.
+
+---
+
+# Example Algorithm
+
+## Problem
+
+Calculate the area of a rectangle.
+
+### Algorithm
+
+```text
+Step 1: Read Length.
+
+Step 2: Read Width.
+
+Step 3: Area = Length × Width.
+
+Step 4: Display Area.
+```
+
+---
+
+# Identifiers
+
+Programs need names for variables.
+
+These names are called **Identifiers**.
+
+> **Definition**
+>
+> An Identifier is the name given to a variable, constant, procedure or function.
+
+---
+
+# Good Identifier Examples
+
+```text
+Name
+
+Age
+
+Marks
+
+Salary
+
+StudentName
+
+AverageMarks
+```
+
+These names are meaningful.
+
+---
+
+# Bad Identifier Examples
+
+```text
+123Marks
+
+Student Name
+
+my-name
+
+%
+
+A
+```
+
+Reasons:
+
+- Cannot begin with a number.
+- Spaces are not allowed.
+- Special characters are not allowed.
+- Names should be meaningful.
+
+---
+
+# Identifier Table
+
+Before writing a program, programmers often prepare an **Identifier Table**.
+
+It lists:
+
+- Variable Name
+- Data Type
+- Purpose
+
+Example:
+
+| Identifier | Data Type | Purpose |
+|------------|-----------|---------|
+| Name | STRING | Student's name |
+| Age | INTEGER | Student's age |
+| Marks | INTEGER | Examination marks |
+| Average | REAL | Average marks |
+| Passed | BOOLEAN | Pass/Fail status |
+
+---
+
+# IPO (Input – Process – Output)
+
+Most algorithms follow the **IPO Model**.
+
+```text
+Input
+   ↓
+Process
+   ↓
+Output
+```
+
+---
+
+# Example
+
+## Problem
+
+Calculate the area of a rectangle.
+
+### Input
+
+```text
+Length
+
+Width
+```
+
+### Process
+
+```text
+Area = Length × Width
+```
+
+### Output
+
+```text
+Area
+```
+
+---
+
+# Pseudocode
+
+## What is Pseudocode?
+
+Pseudocode is a way of writing an algorithm using simple English statements that look similar to programming code.
+
+It is **not** a real programming language.
+
+It helps programmers plan a solution before writing actual code.
+
+---
+
+# Example 1
+
+```text
+INPUT Length
+
+INPUT Width
+
+Area ← Length * Width
+
+OUTPUT Area
+```
+
+---
+
+# Example 2
+
+Calculate the average of three numbers.
+
+```text
+INPUT Number1
+
+INPUT Number2
+
+INPUT Number3
+
+Average ← (Number1 + Number2 + Number3) / 3
+
+OUTPUT Average
+```
+
+---
+
+# The Three Basic Programming Constructs
+
+Every algorithm is built using three basic constructs.
+
+1. Sequence
+2. Selection
+3. Iteration
+
+---
+
+# 1. Sequence
+
+## Definition
+
+Sequence means instructions are executed one after another in order.
+
+No decision is made.
+
+No repetition occurs.
+
+---
+
+# Example
+
+```text
+INPUT Name
+
+INPUT Age
+
+OUTPUT Name
+
+OUTPUT Age
+```
+
+The instructions execute from top to bottom.
+
+---
+
+# Real-Life Example
+
+```text
+Wake up
+
+Brush teeth
+
+Take a shower
+
+Eat breakfast
+
+Go to school
+```
+
+Each step follows the previous one.
+
+---
+
+# 2. Selection
+
+## Definition
+
+Selection means making a decision.
+
+The computer chooses one path depending on whether a condition is true or false.
+
+Keywords:
+
+```text
+IF
+
+THEN
+
+ELSE
+
+ENDIF
+```
+
+---
+
+# Example
+
+```text
+INPUT Marks
+
+IF Marks >= 50 THEN
+
+    OUTPUT "Pass"
+
+ELSE
+
+    OUTPUT "Fail"
+
+ENDIF
+```
+
+---
+
+# Real-Life Example
+
+```text
+If it is raining
+
+Take an umbrella.
+
+Otherwise
+
+Do not take an umbrella.
+```
+
+---
+
+# Nested Selection
+
+Sometimes an IF statement contains another IF statement.
+
+Example:
+
+```text
+INPUT Marks
+
+IF Marks >= 50 THEN
+
+    IF Marks >= 80 THEN
+
+        OUTPUT "Grade A"
+
+    ELSE
+
+        OUTPUT "Pass"
+
+    ENDIF
+
+ELSE
+
+    OUTPUT "Fail"
+
+ENDIF
+```
+
+---
+
+# 3. Iteration (Repetition)
+
+## Definition
+
+Iteration means repeating a group of instructions.
+
+Loops continue until a condition changes.
+
+---
+
+# Types of Loops
+
+Cambridge pseudocode commonly uses:
+
+- FOR Loop
+- WHILE Loop
+- REPEAT UNTIL Loop
+
+---
+
+# FOR Loop
+
+Used when the number of repetitions is already known.
+
+Example:
+
+```text
+FOR Count ← 1 TO 5
+
+    OUTPUT Count
+
+NEXT Count
+```
+
+Output:
+
+```text
+1
+
+2
+
+3
+
+4
+
+5
+```
+
+---
+
+# WHILE Loop
+
+Used when the number of repetitions is unknown.
+
+The condition is checked **before** the loop begins.
+
+Example:
+
+```text
+Count ← 1
+
+WHILE Count <= 5
+
+    OUTPUT Count
+
+    Count ← Count + 1
+
+ENDWHILE
+```
+
+---
+
+# REPEAT UNTIL Loop
+
+The condition is checked **after** executing the loop.
+
+Therefore, the loop always executes at least once.
+
+Example:
+
+```text
+Count ← 1
+
+REPEAT
+
+    OUTPUT Count
+
+    Count ← Count + 1
+
+UNTIL Count > 5
+```
+
+---
+
+# Comparison of Loops
+
+| FOR | WHILE | REPEAT UNTIL |
+|------|--------|--------------|
+| Fixed number of repetitions | Unknown repetitions | Executes at least once |
+| Condition controlled automatically | Condition checked before loop | Condition checked after loop |
+
+---
+
+# Structured English
+
+## What is Structured English?
+
+Structured English describes an algorithm using simple English sentences.
+
+It is easier for humans to read than programming code.
+
+---
+
+# Example
+
+```text
+Read Marks.
+
+If Marks are greater than or equal to 50
+
+Display "Pass"
+
+Otherwise
+
+Display "Fail"
+```
+
+---
+
+# Converting Structured English into Pseudocode
+
+### Structured English
+
+```text
+Read Age.
+
+If Age is greater than or equal to 18
+
+Display "Adult"
+
+Otherwise
+
+Display "Child"
+```
+
+### Pseudocode
+
+```text
+INPUT Age
+
+IF Age >= 18 THEN
+
+    OUTPUT "Adult"
+
+ELSE
+
+    OUTPUT "Child"
+
+ENDIF
+```
+
+---
+
+# Flowcharts
+
+## What is a Flowchart?
+
+A Flowchart is a **diagrammatic representation** of an algorithm.
+
+Instead of writing instructions as text, symbols are used.
+
+---
+
+# Common Flowchart Symbols
+
+| Symbol | Purpose |
+|---------|----------|
+| Oval | Start / End |
+| Rectangle | Process |
+| Parallelogram | Input / Output |
+| Diamond | Decision |
+| Arrow | Flow of control |
+
+---
+
+# Example Flowchart
+
+```
+          ┌─────────┐
+          │  START  │
+          └────┬────┘
+               │
+      ┌────────▼────────┐
+      │ Input Marks     │
+      └────────┬────────┘
+               │
+        ┌──────▼──────┐
+        │ Marks ≥ 50? │
+        └───┬────┬────┘
+            │Yes │No
+            │    │
+     ┌──────▼┐ ┌─▼──────┐
+     │Output │ │ Output │
+     │ Pass  │ │  Fail  │
+     └───┬───┘ └────┬───┘
+         │          │
+         └────┬─────┘
+              │
+        ┌─────▼─────┐
+        │    END    │
+        └───────────┘
+```
+
+---
+
+# Converting Between Representations
+
+Cambridge examination questions often ask students to convert between different representations.
+
+Students should practise converting:
+
+- Structured English → Pseudocode
+- Pseudocode → Structured English
+- Pseudocode → Flowchart
+- Flowchart → Pseudocode
+
+---
+
+# Stepwise Refinement
+
+## What is Stepwise Refinement?
+
+Large problems are usually written in a very general form first.
+
+More details are added step by step until the algorithm is ready to be programmed.
+
+This process is called **Stepwise Refinement**.
+
+---
+
+# Example
+
+### Level 1
+
+```text
+Make Tea
+```
+
+---
+
+### Level 2
+
+```text
+Boil water
+
+Add tea
+
+Add sugar
+
+Serve
+```
+
+---
+
+### Level 3
+
+```text
+Fill kettle
+
+Switch kettle on
+
+Wait until water boils
+
+Add tea leaves
+
+Add sugar
+
+Add milk
+
+Pour into cup
+
+Serve
+```
+
+Each level adds more detail.
+
+---
+
+# Why Use Stepwise Refinement?
+
+Benefits include:
+
+- Easier planning
+- Easier debugging
+- Easier understanding
+- Better program design
+- Reduces mistakes
+
+---
+
+# Logic Statements
+
+Programs often need to compare values.
+
+These comparisons are called **Logic Statements**.
+
+---
+
+# Comparison Operators
+
+| Operator | Meaning |
+|----------|---------|
+| = | Equal to |
+| <> | Not equal to |
+| > | Greater than |
+| < | Less than |
+| >= | Greater than or equal to |
+| <= | Less than or equal to |
+
+---
+
+# Logical Operators
+
+| Operator | Meaning |
+|----------|---------|
+| AND | Both conditions must be true |
+| OR | At least one condition must be true |
+| NOT | Reverses the result |
+
+---
+
+# Example 1
+
+```text
+IF Age >= 18 THEN
+
+    OUTPUT "Adult"
+
+ENDIF
+```
+
+---
+
+# Example 2
+
+```text
+IF Age >= 18 AND Citizen = TRUE THEN
+
+    OUTPUT "Eligible to Vote"
+
+ENDIF
+```
+
+Both conditions must be true.
+
+---
+
+# Example 3
+
+```text
+IF Temperature > 40 OR FireDetected = TRUE THEN
+
+    OUTPUT "Alarm"
+
+ENDIF
+```
+
+Only one condition needs to be true.
+
+---
+
+# Example 4
+
+```text
+IF NOT LoggedIn THEN
+
+    OUTPUT "Please Login"
+
+ENDIF
+```
+
+The NOT operator reverses the condition.
+
+---
+
+# Classroom Activities
+
+## Activity 1
+
+Write an algorithm to calculate the perimeter of a rectangle.
+
+---
+
+## Activity 2
+
+Create an Identifier Table for a Library System.
+
+---
+
+## Activity 3
+
+Convert the following Structured English into Pseudocode.
+
+```text
+Read Temperature.
+
+If Temperature is greater than 30
+
+Display "Hot"
+
+Otherwise
+
+Display "Cold"
+```
+
+---
+
+## Activity 4
+
+Draw a flowchart for finding the larger of two numbers.
+
+---
+
+## Activity 5
+
+Write one example each of:
+
+- Sequence
+- Selection
+- Iteration
+
+---
+
+# Cambridge Examination Tips
+
+Remember the following:
+
+- An **Algorithm** is a step-by-step solution.
+- An **Identifier** is the name of a variable, procedure, or function.
+- Most algorithms follow the **IPO Model**.
+- Pseudocode is **not** a programming language.
+- Every algorithm is built from three constructs:
+  - Sequence
+  - Selection
+  - Iteration
+- A **Flowchart** is a graphical representation of an algorithm.
+- **Stepwise Refinement** adds detail gradually.
+- Use **Logic Statements** to make decisions.
+
+---
+
+# Chapter Summary
+
+## Algorithm
+
+A sequence of well-defined steps used to solve a problem.
+
+---
+
+## Identifier
+
+A meaningful name for variables, constants, procedures, or functions.
+
+---
+
+## IPO
+
+- **Input** → Data entered.
+- **Process** → Operations performed.
+- **Output** → Result produced.
+
+---
+
+## Pseudocode
+
+A human-readable method of writing algorithms before programming.
+
+---
+
+## Three Programming Constructs
+
+### Sequence
+
+Instructions execute in order.
+
+### Selection
+
+A decision is made using IF statements.
+
+### Iteration
+
+Instructions repeat using loops.
+
+---
+
+## Flowchart
+
+A visual representation of an algorithm using standard symbols.
+
+---
+
+## Stepwise Refinement
+
+A technique that develops an algorithm from a simple outline into a detailed solution.
+
+---
+
+## Logic Statements
+
+Used to compare values and make decisions using:
+
+- Comparison operators
+- Logical operators
+
+These concepts form the foundation of algorithm design and are essential for solving programming problems in Cambridge AS & A Level Computer Science.
